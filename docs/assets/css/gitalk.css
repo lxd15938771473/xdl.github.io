@@ -1213,39 +1213,93 @@
   font-weight: bold;
 }
 
-/* 下拉菜单的基本样式 */
+/* 基本导航栏样式 */
+.navbar {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+/* 下拉菜单容器 */
 .dropdown {
   position: relative;
   display: inline-block;
-  cursor: pointer;
+  margin-left: 20px;
 }
 
-/* 隐藏下拉内容 */
+/* 下拉菜单标题 */
+.dropdown-header {
+  color: white;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+.dropdown-header:hover {
+  background-color: #444;
+  border-radius: 5px;
+}
+
+/* 下拉内容的容器 */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
   min-width: 160px;
 }
 
-/* 下拉内容中的链接样式 */
+/* 下拉内容的每一项 */
 .dropdown-content a {
-  color: black;
+  color: #333;
   text-decoration: none;
+  padding: 12px 16px;
   display: block;
-  padding: 8px 16px;
+  transition: background-color 0.3s;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: #f5f5f5;
 }
 
-/* 显示下拉内容 */
+/* 鼠标悬停时显示下拉菜单 */
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/* 动画效果 */
+.dropdown-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*适配*/
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+}
+
 
 
 /*# sourceMappingURL=gitalk.css.map*/
